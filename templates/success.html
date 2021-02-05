@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}Дякуэмо за звернення!{% endblock %}
+
+{% block heading %}
+<h1 class="masthead-heading text-uppercase mb-0">Ваше звернення успішно відправлено!</h1>
+<!-- Icon Divider-->
+<div class="divider-custom divider-light">
+    <div class="divider-custom-line"></div>
+</div>
+<!-- Masthead Subheading-->
+<p class="masthead-subheading font-weight-light mb-0"><b><h2>Незабаром з Вами зв'яжуться</h2></b></p>
+{% endblock %}
+
+{% block content %}
+<!-- Portfolio Section-->
+<section class="page-section portfolio" id="courses">
+    <div class="container">
+        <!-- Portfolio Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">ПЕРЕГЛЯНУТИ ВСІ КУРСИ</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Portfolio Grid Items-->
+        <div class="row">
+
+            <div class="card-deck" style="padding: 0 10px 0 10px;">
+
+                <div class="card"  style="cursor: pointer;" onclick="window.location='/basic';">
+                  <img class="card-img-top" src="static/img/courses/first_main.webp" style="height: 350px; object-fit: cover;">
+                  <div class="card-body">
+                    <p class="card-text"><h3><b>Повний базовий курс Крою та Шиття</b></h3><br><p style="font-size: 1.2rem;">Навчаємо створювати легкий жіночий одяг "Від Ідеї  до готового виробу"</p></p>
+                  </div>
+                  <div class="overlay bg-primary"></div><div class="c_red">ПЕРЕЙТИ</div>
+                </div>
+
+                <div class="card" style="cursor: pointer;" onclick="window.location='/underwear';">
+                  <img class="card-img-top" src="static/img/courses/second_main.webp" style="height: 350px; object-fit: cover;">
+                  <div class="card-body">
+                    <p class="card-text"><h3><b>Курс "Жіноча нижня білизна"</b></h3><br><p style="font-size: 1.2rem;">Навчаємо створювати білизну за індивідуальними мірками та за типовими розмірами</p></p>
+                  </div>
+                  <div class="overlay bg-primary"></div><div class="c_red">ПЕРЕЙТИ</div>
+                </div>
+
+                <div class="card" style="cursor: pointer;" onclick="window.location='/pro';">
+                  <img class="card-img-top" src="static/img/courses/third_main.webp" style="height: 350px; object-fit: cover;">
+                  <div class="card-body">
+                    <p class="card-text"><h3><b>Курс "Профі"</b></h3><br><p style="font-size: 1.2rem;">Класичний жіночий жакет. Верхній одяг на підкладці</p></p>
+                  </div>
+                  <div class="overlay bg-primary"></div><div class="c_red">ПЕРЕЙТИ</div>
+                </div>
+
+                <div class="card" style="cursor: pointer;" onclick="window.location='/pc';">
+                  <img class="card-img-top" src="static/img/courses/fourth_main.webp" style="height: 350px; object-fit: cover;">
+                  <div class="card-body">
+                    <p class="card-text"><h3><b>Курс "Створення лекал на ПК"</b></h3><br><p style="font-size: 1.2rem;">Новий рівень конструювання одягу в програмі Valentina без вкладання коштів за користування програмою</p></p>
+                  </div>
+                  <div class="overlay bg-primary"></div><div class="c_red">ПЕРЕЙТИ</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

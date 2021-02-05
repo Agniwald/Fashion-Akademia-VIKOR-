@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: config.py
+
+Sitemap: http://vikor.cn.ua/sitemap

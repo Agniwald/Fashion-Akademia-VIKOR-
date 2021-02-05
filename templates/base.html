@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+    	<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173057812-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-173057812-1');
+		</script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        {% block meta %}{% endblock %}
+        <title>{% block title %}{% endblock %}</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.ico') }}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">VIKOR</a>
+                <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Меню
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/">Головна</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/#courses">Курси</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/#examples">Наші роботи</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/#about">Про нас</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                {% block heading %}{% endblock %}
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+
+        <!-- Contact Section-->
+        <section class="page-section bg-primary text-white mb-0" id="contact">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white mb-0">Зв'язок з нами</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Contact Section Form-->
+                <div class="row">
+
+                    <div class="col-lg-5 mx-auto">
+                        <br>
+                        <form action="{{ url_for('send') }}" method="post" id="contactForm">
+                            <div class="control-group">
+                            <div class="form-group">
+                                <input class="form-control form-control-lg" id="name" name="name" type="text" placeholder="Ім'я" required="required" data-validation-required-message="Будь-ласка, введіть своє ім'я." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                            <div class="form-group">
+                                <input class="form-control form-control-lg" id="email" name="email" type="email" placeholder="E-mail" required="required" data-validation-required-message="Будь-ласка, введіть свою електрону пошту." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control form-control-lg" id="phone" name="phone" type="tel" placeholder="Номер телефона" required="required" data-validation-required-message="Будь-ласка, введіть свій номер телефону." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <p style="font-size: 1.2rem;"><b>Як з Вам зв'язатися?</b></p>
+                            <input type="radio" name="options" value="Позвонить" required> Зателефонувати </input><br>
+                            <input type="radio" name="options" value="Написать на электронную почту"> Написати на електрону пошту </input><br>
+                            <input type="radio" name="options" value="Написать в Telegram"> Написати в Telegram </input><br>
+                            <input type="radio" name="options" value="Написать в Viber"> Написати в Viber </input><br>
+                            <div class="form-group" style="padding-top: 15px;">
+                                <button class="btn btn-secondary btn-lg">Відправити</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-5 mx-auto">
+                        <div class="container">
+                            <br>
+                            <div class="row">
+                                <!-- Footer Location-->
+                                <h4 class="text-uppercase mb-4">Розташування</h4>
+                            </div>
+                            <div class="row"><p class="lead mb-0">м. Чернігів, вул. Шевченко 42, каб. №211</p></div>
+                            <br>
+                            <div class="row">
+                                <!-- Footer Social Icons-->
+                                <h4 class="text-uppercase mb-4">Ми в соцмережах</h4>
+                            </div>
+                            <div class="row">
+                                <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/akademvik"><i class="fab fa-fw fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/akademvik"><i class="fab fa-fw fa-instagram"></i></a>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <h4 class="text-uppercase mb-4">Телефони</h4>
+                            </div>
+                            <div class="row">
+                                <p class="lead mb-0"><i class="fab fa-fw fa-viber"></i> <i class="fab fa-fw fa-telegram"></i> +380661539496 </p>
+                            </div>
+                            <div class="row">
+                                <p class="lead mb-0"><i class="fab fa-fw fa-whatsapp"></i> +380988607776 </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Copyright Section-->
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>Copyright © VIKOR 2020 <br> by @spaceshinobi</small></div>
+        </div>
+        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+        <div class="scroll-to-top d-lg-none position-fixed">
+            <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
+        </div>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    </body>
+</html>
